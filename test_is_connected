@@ -1,0 +1,14 @@
+import networkx as nx
+G=nx.Graph()
+data=[]
+data[0]=[0,0]
+data[1]=[5,0]
+data[2]=[100,100]
+for n in range(3):
+    G.add_node(n,pos=(data[n][0],data[n][1]))
+for n in range(nn):
+    for m in range(n+1,nn):
+        distance=((data[m][0] - data[n][0]) ** 2 + (data[m][1] - data[n][1]) ** 2) ** 0.5
+        if (distance<=10):
+            G.add_edge(str(m+1),str(n+1),weigh=distance)
+print nx.is_connected(G)
